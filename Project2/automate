@@ -1,0 +1,45 @@
+#!/bin/bash
+echo "Static-Coarse" > tmp.csv
+for i in 1 2 4 8 12
+do
+	COUNTER="1"
+	echo "Performance for $i thread" >> tmp.csv
+	while [ $COUNTER -lt 5 ]
+	do
+		./sc_project2 $i >> tmp.csv
+		COUNTER=$[$COUNTER+1]
+	done
+done
+echo "Dynamic-Coarse" >> tmp.csv
+for i in 1 2 4 8 12
+do
+	COUNTER="1"
+	echo "Performance for $i thread" >> tmp.csv
+	while [ $COUNTER -lt 5 ]
+	do
+		./dc_project2 $i >> tmp.csv
+		COUNTER=$[$COUNTER+1]
+	done
+done
+echo "Static-Fine" >> tmp.csv
+for i in 1 2 4 8 12
+do
+	COUNTER="1"
+	echo "Performance for $i thread" >> tmp.csv
+	while [ $COUNTER -lt 5 ]
+	do
+		./sf_project2 $i >> tmp.csv
+		COUNTER=$[$COUNTER+1]
+	done
+done
+echo "Dynamic-Fine" >> tmp.csv
+for i in 1 2 4 8 12
+do
+	COUNTER="1"
+	echo "Performance for $i thread" >> tmp.csv
+	while [ $COUNTER -lt 5 ]
+	do
+		./df_project2 $i >> tmp.csv
+		COUNTER=$[$COUNTER+1]
+	done
+done

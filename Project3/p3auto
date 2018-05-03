@@ -1,0 +1,40 @@
+#!/bin/bash
+
+
+
+
+echo > data.csv
+
+#fix 1 loop scripts
+for i in {0..15}
+do
+	for j in 1 2 4 8 12
+	do
+		echo "PAD = $i	THREAD = $j" >> data.csv
+		/usr/local/common/gcc-7.3.0/bin/g++ -DNUMPAD=$i -DNUMT=$j -o fix1_project3 fix1_project3.cpp -lm -fopenmp
+		COUNTER=0
+		while [ $COUNTER -lt 3 ]
+		do
+			./fix1_project3 >> data.csv
+			COUNTER=$[$COUNTER+1]
+		done
+	done
+done
+#fix 2
+echo >> data.csv
+echo >> data.csv
+echo >> data.csv
+echo >> data.csv
+echo "FIX 2" >> data.csv
+
+for j in 1 2 4 8 12
+do
+	echo "THREAD = $j" >> data.csv
+	/usr/local/common/gcc-7.3.0/bin/g++ -DNUMT=$j -o fix2_project3 fix2_project3.cpp -lm -fopenmp
+	COUNTER=0
+	while [ $COUNTER -lt 3 ]
+	do
+		./fix2_project3 >> data.csv
+		COUNTER=$[$COUNTER+1]
+	done
+done
