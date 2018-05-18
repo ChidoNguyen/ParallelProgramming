@@ -1,0 +1,8 @@
+g++  -c  simd.p5.cpp -o simd.p5.o
+echo > data.csv
+for i in 1000 10000 100000 1000000 10000000 20000000 32000000
+do
+	g++ -DARR=$i -o program5 p5.cpp simd.p5.o -lm -fopenmp
+	echo "Array Size = $i" >> data.csv
+	./program5 >> data.csv
+done
