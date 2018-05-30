@@ -1,0 +1,12 @@
+#!/bin/bash
+#Performance vs Global Work Size ( hold local work size constant)
+#1k -> 8M global sizes
+#1-1024 work group sizes
+for y in 1 32 64 128 256 512 1024
+do
+	for x in 1024 4096 16384 65536 131072 524288 2097152 8388608
+	do
+		g++ -w -DNUM_ELEMENTS=$x -DLOCAL_SIZE=$y -o second second.cpp /scratch/cuda-7.0/lib64/libOpenCL.so -lm -fopenmp
+		./second
+	done
+done
