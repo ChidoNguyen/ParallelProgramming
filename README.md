@@ -1,8 +1,6 @@
-# ParallelProgramming
+# Parallel Programming Analysis
 
-1. Project 0: Introduction to OpenMP and Parallel Programming advantages in terms of performance value
-2. Project 1: Analyzing how parallel programming can help solve problems ( i.e. volume between 2 surfaces)
-3. Project 2: Schedule + Fine vs Coarse Parallelism
-4. Project 3: False Sharing Impact Analysis 
-
-Some core parallel code was given by the professor. The class focused on analysis and benefits of parallel programming with some basic code implemented by me.
+*  Implement basic parallel program concepts
+*  Generate performance results
+*  Result analysis through write ups, graphs, and tables
+*  The programs are focused on understanding the benefits and concepts of parallelizing programs. Majority of code skeletons were given by the professor. I filled in certain code algorithms and OpenMP and OpenCL directives.
